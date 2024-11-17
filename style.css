@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&family=Source+Code+Pro:wght@500&display=swap');
+
+:root{
+    --mainWhite:azure;
+    --mainGreen: #509836;
+    --mainGray: #2a2a2a69;
+    --secondaryGray:#2a2a2ac7;
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(11, 11, 11);   
+    font-family: 'Montserrat', sans-serif;
+}
+
+#my-div{
+
+    width: 100rem;
+    height:50rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+#my-div>h1{
+    
+    margin:2rem;
+    
+ 
+    text-align: left;
+    width:100%;
+  
+}   
+
+#header{
+    font-size:10rem;
+    text-shadow:0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+    color: azure;
+    opacity: 0;
+}
+
+#name{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    background-color: #2a2a2a69;
+    padding-left: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    font-size:8rem;
+    opacity: 0;
+}
+
+
+#navigationContainer{
+    width: 100%;
+}
+
+#navigation{
+    transition: all 1s ease-out;
+
+    color: var(--mainWhite);
+    font-size:10rem;
+    font-weight: bolder;
+    width:100%;
+    text-shadow:0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+    opacity: 0;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+#navigation:hover{
+    transition: all 1s ease-out;
+
+    color: var(--mainGreen);
+    font-size:10rem;
+    font-weight: bolder;
+    width:100%;
+    margin-left: 10rem;
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    cursor: pointer;
+
+    
+
+}
+
+
+#learn-text{
+    font-size: 6rem;
+    padding-right: 40rem;
+    opacity: 0;
+}
+/* about me  */
+#about-me-container {
+    width: 120rem;
+    height:95rem;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+#navigation-about-forward{
+    transition: all 1s ease-out;
+
+    color: var(--mainWhite);
+    font-size:8rem;
+    font-weight: bolder;
+    width:100%;
+    text-shadow:0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+    padding-left: 2rem;
+    
+}
+
+#navigation-about-forward:hover{
+    transition: all 1s ease-out;
+    margin-left: 5rem;
+    cursor: pointer;
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    color: var(--mainGreen);
+}
+#navigation-about-back{
+    transition: all 1s ease-out;
+
+    color: var(--mainWhite);
+    font-size:8rem;
+    font-weight: bolder;
+    width:100%;
+    text-align: right;
+    padding-right:2rem;
+    text-shadow:0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+   
+    
+}
+#navigation-about-back:hover{
+    transition: all 1s ease-out;
+    margin-right: 5rem;
+    cursor: pointer;
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    color: var(--mainGreen);
+}
+#about-me{
+    width: 80rem;
+    height:95rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+#about-title{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    background-color: #2a2a2a69;
+    padding-left: 2rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    font-size:4rem;
+    padding-right: 10rem;
+    text-align: left;
+   /* opacity: 0; */
+}
+#title-container-about{
+    width: 100%;
+    display:flex;
+    justify-content: left;
+    align-items: left;
+
+}
+#about-info-container{
+    width:100%;
+    height:50rem;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.box{
+    transition: all 0.5s ease-out;
+    width: 35rem;
+    height: 35rem;
+    background-color: var(--mainGray);
+    border-radius: 3rem;
+    margin-bottom: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover{
+    transition: all 0.25s ease-out;
+    box-shadow: 0 0 50px 15px #272727;
+}
+
+#box-text{
+    transition: all 0.5s ease-out;
+    width: 35rem;
+    width: 73rem;
+    height:25rem;
+    background-color: var(--mainGray);
+    border-radius: 3rem;
+}
+#box-text:hover{
+    transition: all 0.25s ease-out;
+    box-shadow: 0 0 50px 15px #272727;
+}
+
+#image-about{
+    transition: all .25s ease-out;
+    width:90%;
+    height:90%;
+    background-image: url("./images/iowa.jpg");
+    border-radius: 3rem;
+    filter: grayscale(100%);
+    opacity: .5;
+}
+
+#image-about:hover{
+
+    transition: all .5s ease-out;
+    filter: grayscale(100%) brightness(1.5);
+   
+    opacity: .5;
+
+}
+
+#image-face{
+    transition: all .25s ease-out;
+    width:90%;
+    height:90%;
+    background-image: url("./images/me.jpg");
+    border-radius: 3rem;
+    filter: grayscale(100%);
+    opacity: .5;
+    background-position: center;
+    background-size: cover;
+}
+
+#image-face:hover{
+
+    transition: all .5s ease-out;
+    filter: grayscale(100%) brightness(1.5);
+   
+    opacity: .5;
+
+}
+
+
+#about-me-text{
+
+    color: var(--mainWhite);
+    padding: 2rem;
+    font-size: 2.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+   
+}
+
+#title-text-box{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    /*text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579; */
+}
+
+#about-me-text2{
+
+    color: var(--mainWhite);
+    padding-left: 2rem;
+    padding-right:2rem;
+    margin-top: 0;
+    font-size: 2.5rem;
+    overflow: hidden;
+   
+}
+
+#experience-years{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    /* text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579; */
+}
+
+.transparentAbout{
+    opacity: 0;
+}
+
+/* skills */
+#skills-container{
+    width: 100rem;
+    height:110rem;
+    display:flex;
+    /*background: var(--mainGray); */
+    flex-direction: column;
+}
+
+#my-skills{
+    width: 100%;
+    height: 20%;
+    display:flex;
+    justify-content: right;
+    align-items: right;
+
+    
+}
+
+#about-skills{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    background-color: #2a2a2a69;
+    padding-left: 2rem;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    font-size:4rem;
+    padding-left: 7rem;
+    font-size: 6rem;
+    text-align: right;
+}
+
+#skills-section-one{
+    background-color: var(--mainGray);
+    width: 100%;
+    height: 30rem;
+    border-radius: 3rem;
+}
+#skills-text{
+    color: var(--mainWhite);
+    padding: 3rem;
+    font-size: 4rem;
+    overflow: hidden;
+    
+}
+#skills-text-highlight{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+
+}
+
+#skills-circle-container{
+    
+    width: 100%;
+    margin-top: 3rem;
+    height:40rem;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 1.5rem;
+}
+.skill{
+    background-color: var(--mainGray);
+    width: 16rem;
+    height: 17rem;
+    border-radius:3rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#skill-header{
+    background-color: var(--mainGray);
+    width: 28rem;
+    height: 17rem;
+    border-radius:3rem;
+    margin: 0;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#skill-header2{
+    background-color: var(--mainGray);
+    width: 28rem;
+    height: 17rem;
+    border-radius:3rem;
+    margin: 0;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#skill-header-one{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    font-size: 4rem;
+}
+#skill-header-two{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    font-size: 3.8rem;
+}
+#skills-section-three{
+    
+    width: 100%;
+    height: 8rem;
+    border-radius: 3rem;
+   
+    
+}
+#reveal-skill-info{
+   
+    font-size: 2.6rem;
+    width: 0;
+    overflow: hidden;
+    height: inherit;
+    white-space: nowrap;
+
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+   
+   
+}
+#skills-text2{
+    color: var(--mainWhite);
+    padding: 3rem;
+    font-size: 2.6rem;
+    overflow: hidden;
+}
+#project-column-container{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+#left-column-project{
+    width: 100%;
+    height: 50%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    gap: 2rem;
+    
+}
+#right-column-project{
+    width: 50%;
+    height: 100%;
+    border-radius: 1.5rem;
+}
+#project-image-container{
+    width: 100%;
+    height: 100%;
+    background-color: var(--mainGray);
+    opacity: 1;
+    border-radius: 1.5rem;
+    background-image: url("./images/driftcentral.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    border-radius: 1rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all .5s ease-out;
+}
+#project-image-container:hover {
+    transition: all .5s ease-out;
+    filter: grayscale(100%) brightness(1.5);
+    opacity: .75;
+}
+
+#project-image:hover + #project-title {
+    transition: all .5s ease-out;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    
+}
+#project-text-container{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--mainGray);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    
+}
+#project-title{
+    z-index: 1;
+    font-size: 3rem;
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainWhite);
+    text-shadow: 0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+    text-align: center;
+    
+    padding: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    transition: all .5s ease-out;
+}
+#year-project{
+    z-index: 1;
+    font-size: 3rem;
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainWhite);
+    text-shadow: 0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+    text-align: center;
+    padding: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    transition: all .5s ease-out;
+}
+#project-button-container{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+
+}
+.project-button{
+    width: 20.5rem;
+    height: 10rem;
+    background-color: var(--mainGray);
+    border-radius: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    color: var(--mainWhite);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.project-button:hover {
+    color: var(--mainGreen);
+    text-shadow: none;
+    font-family: 'Source Code Pro', monospace;
+    transition: all 0.25s ease-out;
+    box-shadow: 0 0 50px 15px #272727;
+}
+#project-description{
+    color: var(--mainWhite);
+    font-size: 3rem;
+    width: 100%;
+    height: 45rem;
+    text-align: center;
+    background-color: var(--mainGray);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+}
+#project-achievements{
+    color: var(--mainWhite);
+    font-size: 2.6rem;
+    width: 100%;
+    text-align: center;
+    background-color: var(--mainGray);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#project-technologies{
+    color: var(--mainWhite);
+    font-size: 2.6rem;
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+    background-color: var(--mainGray);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#project-desc-text{
+    padding: 3rem;
+}
+#project-ach-text{
+    padding:3rem;
+}
+#project-tech-text{
+    padding:2rem;
+}
+
+.highlight{
+    transition: all 0.25s ease-out;
+}
+.highlight:hover{
+    transition: all 0.25s ease-out;
+    box-shadow: 0 0 50px 15px #272727;
+}
+
+
+
+
+
+
+
+
+
+
