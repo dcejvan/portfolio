@@ -536,30 +536,34 @@ body{
 #project-button-container{
     width: 100%;
     display:flex;
-    justify-content: space-between;
+    justify-content:center;
+    gap: 6rem;
+   
 
 }
 .project-button{
     width: 20.5rem;
-    height: 10rem;
-    background-color: var(--mainGray);
+    height: 5rem;
+    text-shadow: 0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+    text-align: center;
     border-radius: 1rem;
     display:flex;
     justify-content: center;
     align-items: center;
-    font-size: 6rem;
+    font-size: 2.6rem;
     color: var(--mainWhite);
-    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease-out;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .project-button:hover {
-    color: var(--mainGreen);
-    text-shadow: none;
+    text-shadow: 0px 0px 60px #ffffff68, 0px 0px 60px #cccccc79;
+ 
     font-family: 'Source Code Pro', monospace;
     transition: all 0.25s ease-out;
-    box-shadow: 0 0 50px 15px #272727;
+    
 }
 #project-description{
     color: var(--mainWhite);
