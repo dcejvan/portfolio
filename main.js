@@ -18,24 +18,31 @@ import { Vector3 } from 'three';
 
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 10000);
+// Add fog to the scene
+scene.fog = new THREE.FogExp2(0x000000, 0.00015); // Black fog with density 0.001
 
 
-const cssRenderer = new CSS3DRenderer();
-
-cssRenderer.setSize(window.innerWidth,window.innerHeight);
-cssRenderer.clear = true;
-
-document.body.appendChild(cssRenderer.domElement);
 
 
 
 const backgroundElements = [];
 
-// const renderer = new THREE.WebGLRenderer();
-// renderer.setSize(window.innerWidth, window.innerHeight);
-// renderer.setClearColor();
-// document.body.appendChild(renderer.domElement);
+const renderer = new THREE.WebGLRenderer({ antialias: false });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio * 0.7); // Reduce pixel ratio for better performance
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor();
+document.body.appendChild(renderer.domElement);
+
+const cssRenderer = new CSS3DRenderer();
+
+cssRenderer.setSize(window.innerWidth,window.innerHeight);
+
+cssRenderer.clear = true;
+cssRenderer.domElement.classList.add('css3d-renderer');
+
+document.body.appendChild(cssRenderer.domElement);
 
 
 
@@ -78,46 +85,43 @@ function skillsDiv(){
 
 
 
-// function background() {
-//     var text = ["?", "!", "-", "+", "&&", "="];
-//     for (let i = 0; i < 200; i++) {
-//         const element = document.createElement("p");
-//         element.style.color = "azure";
-//         element.style.width = "1rem";
-//         element.style.height = "1rem";
-//         element.style.fontSize = "2rem";
-//         element.style.opacity = ".2"; // Set opacity to semi-transparent
-//         element.style.textShadow = "0 0 5px azure, 0 0 5px azure, 0 0 15px azure"; // Add glow effect
-//         element.innerHTML = text[getRndInteger(0, 5)];
-//         const object = new CSS3DObject(element);
-//         object.position.set(getRndInteger(-4000, 4000), getRndInteger(-1500,1500), getRndInteger(-4000, 0));
-//         object.rotation.x = getRndInteger(0, 360);
-//         object.rotation.y = getRndInteger(0, 360);
-//         object.rotation.z = getRndInteger(0, 360);
-//         backgroundElements.push(object);
-//         scene.add(object);
-//     }
+function background() {
+    const gridHelper = new THREE.GridHelper(1000, 20, 0xffffff, 0xffffff);
+    
+    gridHelper.scale.set(25,25,25);
+    gridHelper.position.set(15,-700,-1000);
+    gridHelper.rotation.x = -.2;
+    gridHelper.rotation.y =.45;
+    gridHelper.rotation.z = .1;
+    gridHelper.material.opacity = 0.08;
+    gridHelper.material.transparent = true;
+    scene.add(gridHelper);
+}
 
-//     // Add grain effect
-   
-// }
+function animateBackgroundElements() {
+    backgroundElements.forEach((object) => {
+        object.position.x += Math.sin(Date.now() * 0.001) * 0.1;
+        object.position.y += Math.cos(Date.now() * 0.001) * 0.1;
+        object.position.z += Math.sin(Date.now() * 0.001) * 0.1;
+        object.rotation.x += 0.001;
+        object.rotation.y += 0.001;
+        object.rotation.z += 0.001;
+    });
+}
 
-// function animateBackgroundElements() {
-//     backgroundElements.forEach((object) => {
-//         object.position.x += Math.sin(Date.now() * 0.001) * 0.1;
-//         object.position.y += Math.cos(Date.now() * 0.001) * 0.1;
-//         object.position.z += Math.sin(Date.now() * 0.001) * 0.1;
-//         object.rotation.x += 0.001;
-//         object.rotation.y += 0.001;
-//         object.rotation.z += 0.001;
-//     });
-// }
+
+
+// Add the gradient background
+
 
 
 firstDiv();
 secondDiv();
 skillsDiv();
-//background();
+background();
+const backgroundAnimation = background();
+
+
 
 
 
@@ -127,8 +131,9 @@ function animate(){
 
  
     requestAnimationFrame(animate);
-    //animateBackgroundElements();
-    //renderer.render(scene,camera);
+   
+   // animateBackgroundElements();
+    renderer.render(scene,camera);
     cssRenderer.render(scene,camera);
 
 }

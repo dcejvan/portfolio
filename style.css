@@ -9,7 +9,20 @@
     /*#509836 for the original green*/
 }
 
-
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* WebGL renderer (background) */
+  }
+  
+  .css3d-renderer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* CSS3D renderer (foreground) */
+    pointer-events: none; /* Prevent CSS3D elements from blocking interactions */
+  }
 body{
     padding: 0;
     margin: 0;
