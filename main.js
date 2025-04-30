@@ -63,21 +63,21 @@ function secondDiv(){
     const element = document.querySelector('#about-me-container');
     const title =   new CSS3DObject(element);
     title.scale.set(.30,.30,.30);
-    title.position.set(1025,5,-625);
+    title.position.set(1075,5,-650);
     title.rotation.x = -.2;
-    title.rotation.y =.30;
+    title.rotation.y =.45;
     title.rotation.z = .1;
     
     scene.add(title);
 }
 
 function skillsDiv(){
-    const element = document.querySelector('#skills-container');
+    const element = document.querySelector('#skills-total-container');
     const title =   new CSS3DObject(element);
     title.scale.set(.30,.30,.30);
     title.position.set(2600,100,-1200);
     title.rotation.x = -.2;
-    title.rotation.y =.35;
+    title.rotation.y =.45;
     title.rotation.z = .1;
     
     scene.add(title);
@@ -212,10 +212,14 @@ const navigationOne = document.querySelector("#navigation");
 const learnText = document.querySelector("#learn-text");
 const navigationAboutBack = document.querySelector("#navigation-about-back");
 const navigationAboutForward = document.querySelector("#navigation-about-forward");
+const navigationSkillBack = document.querySelector("#navigation-skill-back");
+const navigationSkillForward = document.querySelector("#navigation-skill-forward");
 
 navigationOne.addEventListener('click',moveToTwo);
 navigationAboutBack.addEventListener('click',moveBackOne);
 navigationAboutForward.addEventListener('click',moveToThree);
+navigationSkillBack.addEventListener('click',moveToTwo);
+navigationSkillForward.addEventListener('click',moveToFour);
 
 
 
@@ -314,6 +318,23 @@ function moveToThree(){
         }
       });
 }
+function moveToFour(){
+    loadInAbout();
+   // isTweeningCamera = true;
+    anime({
+        targets: cameraPosition,
+        // Define animation properties
+        x: 2600, // Example target x position
+        y: 100, // Example target y position
+        z: -1200, // Example target z position
+        duration: 2000, // Animation duration in milliseconds
+        easing: 'easeInOutQuad', // Animation easing function
+        update: () => {
+          // Update camera position on each animation frame
+          camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z);
+        }
+      });
+}
 
 //TO DO: add javascript on hover for skills for text to pop up.
 
@@ -326,23 +347,42 @@ navigationOne.addEventListener("mouseleave", function() {
     showTextNavigation("0", "40rem", "easeInCirc","1000");
 }, false);
 
-//work page
+//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\
+//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\
+//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\//WORK PAGE\\
 
-const projectPicture = document.querySelector("#project-image");
+const projectPicture = document.querySelector("#project-image-container");
 const projectLeft = document.querySelector("#project-left");
 const projectRight = document.querySelector("#project-right");
 const projectTitle = document.querySelector("#project-title");
 const projectYear = document.querySelector("#year-project");
 const projectTechText = document.querySelector("#project-tech-text");
+const projectAchText = document.querySelector("#project-ach-text");
+const projectDescText = document.querySelector("#project-description-text");
 
 const jobPicture = ["./images/driftcentral.png", "./images/niwagarden.png", "./images/driftcentral.png"];
 const jobTexts = ["Job 1", "Job 2", "Job 3"];
-const descTexts = ["Description 1", "Description 2", "Description 3"];
+const descTexts = ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, perferendis. Dolor consequuntur blanditiis tempora corrupti numquam aperiam excepturi porro cupiditate sed quam ex iste ea, unde vero, similique animi illum?", 
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates at minima harum vel id mollitia, rem ducimus unde maiores dolores, ipsa quae? Animi nihil labore perspiciatis repellendus esse nesciunt perferendis.", 
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt error consectetur expedita pariatur beatae, saepe corporis id aspernatur ipsam aperiam, provident quibusdam! In non qui adipisci deleniti mollitia rerum ab?"];
 const achTexts = ["Achievement 1", "Achievement 2", "Achievement 3"];
 const techTexts = ["Tech 1", "Tech 2", "Tech 3"];
+const yearTexts = ["(2023-2024)", "(2024)", "(2023)"];
 const projectTitleTexts = ["//drift central", "//niwagarden", "//personal website"];
 
 let currentIndex = 0;
+function handleText(index) {
+    setTimeout(() => {
+        projectDescText.innerText = descTexts[index];
+        projectAchText.innerText = achTexts[index];
+        projectYear.innerText = yearTexts[index];
+        projectTechText.innerText = techTexts[index];
+        projectTitle.innerText = projectTitleTexts[index];
+        projectPicture.style.backgroundImage = `url(${jobPicture[index]})`;  // Update the image source 
+        // Wait for 1 second before continuing
+    }, 300);
+    
+}
 function animateButton(button){
     if(button == projectLeft){
         anime({
@@ -366,6 +406,9 @@ function animateButton(button){
            
             }
         });
+
+       
+
     }else{
         anime({
             targets: button,
@@ -393,28 +436,46 @@ function animateButton(button){
 }
 function updateProjectTexts(index, button) {
     animateButton(button);
-    // anime({
-    //     targets: [projectJobText, projectDescText, projectAchText, projectTechText, projectTitle, projectPicture],
-    //     opacity: 0,
-    //     duration: 500,
-    //     easing: 'easeOutQuad',
-    //     delay: anime.stagger(100), // Add stagger delay for fade out
-    //     complete: function() {
-    //         projectJobText.innerText = jobTexts[index];
-    //         projectDescText.innerText = descTexts[index];
-    //         projectAchText.innerText = achTexts[index];
-    //         projectTechText.innerText = techTexts[index];
-    //         projectTitle.innerText = projectTitleTexts[index];
-    //         projectPicture.style.backgroundImage = `url(${jobPicture[index]})`;  // Update the image source
-    //         anime({
-    //             targets: [projectJobText, projectDescText, projectAchText, projectTechText, projectTitle, projectPicture],
-    //             opacity: 1,
-    //             duration: 500,
-    //             easing: 'easeInQuad',
-    //             delay: anime.stagger(100) // Add stagger delay for fade in
-    //         });
-    //     }
-    // });
+    anime({
+        targets: [projectTechText, projectTitle, projectPicture, projectAchText, projectDescText, projectYear],
+        opacity: 0,
+        duration: 500,
+        easing: 'easeOutQuad',
+        delay: anime.stagger(50), // Add stagger delay for fade out
+        complete: function() {
+            if(button == projectLeft){
+                console.log("left button");
+                if(currentIndex == 0){
+                    currentIndex = jobTexts.length - 1;
+                    handleText(currentIndex);
+                }else{
+                    console.log("currentIndex called: " + currentIndex);
+                    currentIndex--;
+                    handleText(currentIndex);
+                }
+            }else{ //right button
+                if(currentIndex == jobTexts.length - 1){
+                    currentIndex = 0;
+                    handleText(currentIndex);
+                }else{
+                    currentIndex++;
+                    handleText(currentIndex);
+                }
+            }
+            
+            
+            setTimeout(() => {
+                anime({
+                    targets: [projectTechText, projectTitle, projectPicture, projectAchText, projectDescText, projectYear],
+                    opacity: 1,
+                    duration: 500,
+                    easing: 'easeInQuad',
+                    delay: anime.stagger(50) // Add stagger delay for fade in
+                });
+            }, 250);
+          
+        }
+    });
 }
 
 projectLeft.addEventListener('click', () => {
@@ -426,34 +487,8 @@ projectRight.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % jobTexts.length;
     updateProjectTexts(currentIndex, projectRight);
 });
-//POP UP SHIT
-// function showSkills(info){
-//     skillShow.style.width = 0;
-//     skillShow.style.opacity = 0;
-//     skillShow.innerHTML = info;
-//     anime({
-//         targets: skillShow,
-//         width: "70%",
-//         opacity: 1,
-//         duration: 1500,
-//         easing: 'easeOutQuart',
-//         complete: function() {
-//             // Set final styles after the animation completes
-//             skillShow.style.width = '70%';
-//             skillShow.style.opacity = 1;
-//         }
-//     });
-// }
-// function hideSkills(){
-   
-//     console.log(skillShow.style.width + "RRRR");  
-//     anime({
-//       targets: skillShow,
-//       width: "0%",
-//       opacity: 0,
-//       duration: 2000,
-//       easing: 'easeOutQuart'
-//      });
-     
-//   }
+
+
+//CONTACT PAGE\\//CONTACT PAGE\\//CONTACT PAGE\\//CONTACT PAGE\\//CONTACT PAGE\\
+//CONTACT PAGE\\//CONTACT PAGE\\//CONTACT PAGE\\//CONTACT PAGE\\//CONTACT PAGE\\
 
