@@ -795,11 +795,12 @@ body{
 }
 #about-contact-container{
     width:100%;
-    height:100%;
+    height:40rem;
     display: flex;
     flex-direction: row;
-    justify-content: cen;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 2rem;
    
 }
 #contact-me{
@@ -876,6 +877,62 @@ body{
     text-align: left;
 }
 
+#contact-info-text3{
+    color: var(--mainWhite);
+    font-size: 3rem;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    gap: 2rem;
+}
+#contact-info-text4 {
+    color: var(--mainWhite);
+    padding: 3rem;
+    font-size: 3rem;
+    overflow: hidden;
+    text-align: center; /* Center text horizontally */
+    line-height: 15rem; /* Center text vertically */
+    width: 100%;
+    height: 15rem;
+    background-color: var(--mainGray);
+    border-radius: 1.5rem;
+}
+
+#contact-info-text4 span {
+    display: inline-block; /* Ensure span behaves properly */
+    vertical-align: middle; /* Align span vertically */
+}
+#current-project{
+    width: 50rem;
+    height: 100%;
+    display: flex;
+    padding: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainGray);
+    text-align: center;
+    font-size: 3.5rem;
+    
+}
+
+#highlight-current{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+}
+
+#new-project-container{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
 
 
 
