@@ -337,7 +337,7 @@ function moveToFour(){
     anime({
         targets: cameraPosition,
         // Define animation properties
-        x: 4000, // Example target x position
+        x: 4100, // Example target x position
         y: 100, // Example target y position
         z: -1200, // Example target z position
         duration: 2000, // Animation duration in milliseconds

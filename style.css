@@ -346,7 +346,7 @@ body{
     color: var(--mainGreen);
     text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
     background-color: #2a2a2a69;
-    padding-left: 2rem;
+    padding-right: 2rem;
     padding: 3rem;
     border-radius: 1.5rem;
     font-size:4rem;
@@ -761,7 +761,6 @@ body{
     display:flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--mainGray);
        
 }
 #about-contact{
@@ -777,22 +776,31 @@ body{
     padding-right: 7rem;
     font-size: 6rem;
     text-align: left;
+    margin: 0;
 }
 #title-container-skills{
     width: 100%;
     display:flex;
+    justify-content: right;
+    align-items: center;
+
+}
+#title-container-contact{
+    width: 100%;
+    margin: 0;
+    display:flex;
     justify-content: left;
-    align-items: left;
+    align-items: center;
 
 }
 #about-contact-container{
     width:100%;
     height:100%;
     display: flex;
-    justify-content: left;
+    flex-direction: row;
+    justify-content: cen;
     flex-wrap: wrap;
-    gap: 2rem;
-    background-color: var(--mainGray);
+   
 }
 #contact-me{
     width: 100%;
@@ -802,6 +810,77 @@ body{
     align-items: center;
    
 }
+
+#contact-information-box{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#contact-info{
+    width:100%;
+    height: 40rem;
+    background-color: var(--mainGray);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#contact-info-text{
+    color: var(--mainWhite);
+    padding-left: 3rem;
+    font-size: 3.5rem;
+    overflow: hidden;
+
+   
+}
+#connect-container{
+    width: 100%;
+    height: 30rem;
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 2rem;
+}
+#connect-title{
+    font-family: 'Source Code Pro', monospace;
+    transition: all;
+    color: var(--mainGreen);
+    height:8rem;
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    background-color: #2a2a2a69;
+    padding-left: 15rem;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    padding-right: 3rem;
+    font-size: 4rem;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-btn{
+    background-color: var(--mainGray);
+    width: 23.2rem;
+    height: 14rem;
+    border-radius: 1.5rem;
+}
+#contact-info-text2{
+    color: var(--mainWhite);
+    padding-left: 3rem;
+    font-size: 3.5rem;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+
+
+
+
 
 
 
