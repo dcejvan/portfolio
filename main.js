@@ -82,6 +82,18 @@ function skillsDiv(){
     
     scene.add(title);
 }
+function contactDiv(){ 
+    const element = document.querySelector('#contact-container');
+    const title =   new CSS3DObject(element);
+    title.scale.set(.30,.30,.30);
+    title.position.set(4200,100,-1800);
+    title.rotation.x = -.2;
+    title.rotation.y =.45;
+    title.rotation.z = .1;
+    scene.add(title);
+
+}
+
 
 
 
@@ -118,6 +130,7 @@ function animateBackgroundElements() {
 firstDiv();
 secondDiv();
 skillsDiv();
+contactDiv();
 background();
 const backgroundAnimation = background();
 
@@ -324,7 +337,7 @@ function moveToFour(){
     anime({
         targets: cameraPosition,
         // Define animation properties
-        x: 2600, // Example target x position
+        x: 4000, // Example target x position
         y: 100, // Example target y position
         z: -1200, // Example target z position
         duration: 2000, // Animation duration in milliseconds
