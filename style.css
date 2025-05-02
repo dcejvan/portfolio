@@ -853,7 +853,7 @@ body{
     height:8rem;
     text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
     background-color: #2a2a2a69;
-    padding-left: 15rem;
+    padding-left: 0rem;
     padding: 3rem;
     border-radius: 1.5rem;
     padding-right: 3rem;
@@ -862,12 +862,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    width:60rem;
 }
 .contact-btn{
     background-color: var(--mainGray);
     width: 23.2rem;
     height: 14rem;
     border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #contact-info-text2{
     color: var(--mainWhite);
@@ -955,7 +959,87 @@ body{
     align-self: center;
 }
 
+.image-contact-btn-container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
 
+}
+#linked-img{
+    width: 10rem;
+    height: 10rem;
+    background-image: url("./images/linkedin.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    filter: grayscale(0%) brightness(100%) invert(1);
+    opacity: .75;
+    transition: all .5s ease-out;
+}
+#linked-img:hover {
+    transition: all .5s ease-out;
+    filter: grayscale(0%) brightness(1.5) invert(1);
+    opacity: 1;
+
+}
+
+#email-img{
+    width: 10rem;
+    height: 10rem;
+    background-image: url("./images/email2.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    filter: grayscale(0%) brightness(100%) invert(1);
+    opacity: .75;
+    transition: all .5s ease-out;
+}
+#email-img:hover {
+    transition: all .5s ease-out;
+    filter: grayscale(0%) brightness(1.5) invert(1);
+    opacity: 1;
+
+}
+
+#github-img{
+    width: 10rem;
+    height: 10rem;
+    background-image: url("./images/github.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    filter: grayscale(0%) brightness(100%) invert(1);
+    opacity: .75;
+    transition: all .5s ease-out;
+}
+#github-img:hover {
+    transition: all .5s ease-out;
+    filter: grayscale(0%) brightness(1.5) invert(1);
+    opacity: 1;
+
+}
+
+
+#resume-img{
+    width: 11rem;
+    height: 10rem;
+    background-image: url("./images/resume2.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    filter: grayscale(0%) brightness(100%) invert(1);
+    opacity: .75;
+    transition: all .5s ease-out;
+}
+#resume-img:hover {
+    transition: all .5s ease-out;
+    filter: grayscale(0%) brightness(1.5) invert(1);
+    opacity: 1;
+
+}
 
 
 
