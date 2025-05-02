@@ -839,7 +839,7 @@ body{
 }
 #connect-container{
     width: 100%;
-    height: 30rem;
+    height: 18rem;
     border-radius: 1.5rem;
     display: flex;
     justify-content: right;
@@ -880,33 +880,34 @@ body{
 #contact-info-text3{
     color: var(--mainWhite);
     font-size: 3rem;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-align: left;
     width: 100%;
-    height: 15rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 20rem;
     border-radius: 1.5rem;
     gap: 2rem;
+    background-color: var(--mainGray);
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content vertically */
+   
+    
+    
 }
 #contact-info-text4 {
     color: var(--mainWhite);
-    padding: 3rem;
+    padding-top: 3rem;
+    padding-left: 6rem;
     font-size: 3rem;
-    overflow: hidden;
-    text-align: center; /* Center text horizontally */
-    line-height: 15rem; /* Center text vertically */
+    text-align: left; /* Center text horizontally */
     width: 100%;
-    height: 15rem;
-    background-color: var(--mainGray);
+    height: 2rem;
+   
     border-radius: 1.5rem;
+    margin: 0;
+    
 }
 
-#contact-info-text4 span {
-    display: inline-block; /* Ensure span behaves properly */
-    vertical-align: middle; /* Align span vertically */
-}
 #current-project{
     width: 50rem;
     height: 100%;
@@ -921,11 +922,31 @@ body{
     
 }
 
-#highlight-current{
+#contact-info-text5{
     font-family: 'Source Code Pro', monospace;
     transition: all;
     color: var(--mainGreen);
     text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    text-align: left;
+    width:100%;
+    padding-left: 6rem;
+    text-decoration: underline dotted var(--mainGreen);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+    animation: underline-glow 1.5s infinite alternate;
+    padding-top: 2rem;
+    
+   
+}
+@keyframes underline-glow {
+    0% {
+        text-decoration-color: var(--mainGreen);
+        text-shadow: 0 0 10px var(--mainGreen);
+    }
+    100% {
+        /* text-decoration-color: #ffffff; */
+        text-shadow: 0 0 20px var(--mainGreen), 0 0 30px var(--mainGreen);
+    }
 }
 
 #new-project-container{
