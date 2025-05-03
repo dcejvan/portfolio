@@ -1041,6 +1041,25 @@ body{
 
 }
 
+#navigation-contact-back{
+    transition: all 1s ease-out;
+
+    color: var(--mainWhite);
+    font-size:12rem;
+    font-weight: bolder;
+    width:100%;
+    text-align: right;
+    padding-right:2rem;
+    text-shadow:0px 0px 30px #ffffff68, 0px 0px 30px #cccccc79;
+   
+}
+#navigation-contact-back:hover{
+    transition: all 1s ease-out;
+    margin-right: 5rem;
+    cursor: pointer;
+    text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
+    color: var(--mainGreen);
+}
 
 
 

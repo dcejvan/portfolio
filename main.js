@@ -227,12 +227,13 @@ const navigationAboutBack = document.querySelector("#navigation-about-back");
 const navigationAboutForward = document.querySelector("#navigation-about-forward");
 const navigationSkillBack = document.querySelector("#navigation-skill-back");
 const navigationSkillForward = document.querySelector("#navigation-skill-forward");
-
+const navigationContactBack = document.querySelector("#navigation-contact-back");
 navigationOne.addEventListener('click',moveToTwo);
 navigationAboutBack.addEventListener('click',moveBackOne);
 navigationAboutForward.addEventListener('click',moveToThree);
 navigationSkillBack.addEventListener('click',moveToTwo);
 navigationSkillForward.addEventListener('click',moveToFour);
+navigationContactBack.addEventListener('click',moveToThree);
 
 
 
