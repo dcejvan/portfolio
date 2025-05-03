@@ -1060,6 +1060,12 @@ body{
     text-shadow:0px 0px 30px #34814a68, 0px 0px 30px #28584579;
     color: var(--mainGreen);
 }
+.transparentSkills{
+    opacity: 0;
+}
+.transparentContact{
+    opacity: 0;
+}
 
 
 

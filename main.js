@@ -86,7 +86,7 @@ function contactDiv(){
     const element = document.querySelector('#contact-container');
     const title =   new CSS3DObject(element);
     title.scale.set(.30,.30,.30);
-    title.position.set(4200,100,-1800);
+    title.position.set(4500,100,-1750);
     title.rotation.x = -.2;
     title.rotation.y =.45;
     title.rotation.z = .1;
@@ -191,6 +191,8 @@ function getRndInteger(min, max) {
 
 const onLoadElements = document.querySelectorAll('#my-div > *');
 const aboutMeElements = document.querySelectorAll('.transparentAbout');
+const skillsElements = document.querySelectorAll('.transparentSkills');
+const contactElements = document.querySelectorAll('.transparentContact');
 console.log(aboutMeElements);
 
 
@@ -216,6 +218,25 @@ function loadInAbout(){
         delay: anime.stagger(100)
     });
 }
+function loadInSkills(){
+    anime({
+        targets: skillsElements,
+        opacity: 1,
+        duration: 2000,
+        easing: 'linear',
+        delay: anime.stagger(100)
+    });
+}
+function loadInContact(){
+    anime({
+        targets: contactElements,
+        opacity: 1,
+        duration: 2000,
+        easing: 'linear',
+        delay: anime.stagger(100)
+    });
+}
+    
 
 
 window.onload = loadFunction();
@@ -312,11 +333,12 @@ function moveToTwo(){
           camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z);
         }
       });
+
       //isTweeningCamera = false;
 }
 
 function moveToThree(){
-    loadInAbout();
+    loadInSkills();
    // isTweeningCamera = true;
     anime({
         targets: cameraPosition,
@@ -333,12 +355,12 @@ function moveToThree(){
       });
 }
 function moveToFour(){
-    loadInAbout();
+    loadInContact();
    // isTweeningCamera = true;
     anime({
         targets: cameraPosition,
         // Define animation properties
-        x: 4100, // Example target x position
+        x: 4400, // Example target x position
         y: 100, // Example target y position
         z: -1200, // Example target z position
         duration: 2000, // Animation duration in milliseconds
