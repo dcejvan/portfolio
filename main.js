@@ -75,7 +75,7 @@ function skillsDiv(){
     const element = document.querySelector('#skills-total-container');
     const title =   new CSS3DObject(element);
     title.scale.set(.30,.30,.30);
-    title.position.set(2600,100,-1200);
+    title.position.set(2550,100,-1200);
     title.rotation.x = -.2;
     title.rotation.y =.45;
     title.rotation.z = .1;
@@ -151,12 +151,12 @@ function animate(){
 
 }
 animate();
-window.onresize = function(e){
-    camera.aspect = window.innerWidth/window.innerHeight;
+window.onresize = function(e) {
+    camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 
-
-    cssRenderer.setSize(window.innerWidth,window.innerHeight);
+    cssRenderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth, window.innerHeight); // Update the WebGL renderer size
 }
 
 let oldx = 0;
@@ -256,7 +256,37 @@ navigationSkillBack.addEventListener('click',moveToTwo);
 navigationSkillForward.addEventListener('click',moveToFour);
 navigationContactBack.addEventListener('click',moveToThree);
 
+const navButtons = document.querySelectorAll('#nav-start, #nav-about, #nav-skills, #nav-contact'); // Explicitly select all navigation buttons
 
+function resetNavButtonColors() {
+    navButtons.forEach(button => {
+        button.style.color = ''; // Reset to original text color
+    });
+}
+
+document.getElementById('nav-start').addEventListener('click', () => {
+    resetNavButtonColors();
+    // Set text color to semi-transparent green
+    moveBackOne(); // Move camera to START section
+});
+
+document.getElementById('nav-about').addEventListener('click', () => {
+    resetNavButtonColors();
+    // Set text color to green
+    moveToTwo(); // Move camera to ABOUT section
+});
+
+document.getElementById('nav-skills').addEventListener('click', () => {
+    resetNavButtonColors();
+    // Set text color to green
+    moveToThree(); // Move camera to SKILLS section
+});
+
+document.getElementById('nav-contact').addEventListener('click', () => {
+    resetNavButtonColors();
+     // Set text color to green
+    moveToFour(); // Move camera to CONTACT section
+});
 
 //show-skill
 
@@ -293,8 +323,8 @@ const cameraPosition = {
   
 
 function moveBackOne(){
-
-    
+    resetNavButtonColors();
+    document.getElementById('nav-start').style.color = 'rgba(98, 160, 146, 0.6)';
     anime({
         targets: cameraPosition,
         // Define animation properties
@@ -318,6 +348,8 @@ function moveBackOne(){
 
 }
 function moveToTwo(){
+    resetNavButtonColors();
+    document.getElementById('nav-about').style.color = 'rgba(98, 160, 146, 0.6)'; 
     loadInAbout();
    // isTweeningCamera = true;
     anime({
@@ -338,6 +370,8 @@ function moveToTwo(){
 }
 
 function moveToThree(){
+    resetNavButtonColors();
+    document.getElementById('nav-skills').style.color = 'rgba(98, 160, 146, 0.6)';
     loadInSkills();
    // isTweeningCamera = true;
     anime({
@@ -355,6 +389,8 @@ function moveToThree(){
       });
 }
 function moveToFour(){
+    resetNavButtonColors();
+    document.getElementById('nav-contact').style.color = 'rgba(98, 160, 146, 0.6)';
     loadInContact();
    // isTweeningCamera = true;
     anime({
