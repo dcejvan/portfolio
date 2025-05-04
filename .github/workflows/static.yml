@@ -40,7 +40,7 @@ jobs:
       - name: Fix Permissions
         run: chmod +x node_modules/.bin/vite
       - name: Build with Vite
-        run: node --experimental-global-webcrypto --import vite --eval "import('vite').then(v => v.build())"
+        run: node --experimental-global-webcrypto setup.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
