@@ -1,1 +1,1 @@
-{"scripts":{"dev":"vite --host 127.0.0.1"},"dependencies":{"animejs":"^3.2.2","three":"^0.160.0","three-css3drenderer":"^1.0.1","vite":"^5.0.10"}}
+{"scripts":{"dev":"vite --host 127.0.0.1", "build": "vite build", "preview": "vite preview"},"dependencies":{"animejs":"^3.2.2","three":"^0.160.0","three-css3drenderer":"^1.0.1","vite":"^5.0.10"}}
