@@ -1,10 +1,5 @@
 // setup.mjs
-import { webcrypto } from 'crypto';
+import { build } from 'vite';
 
-// Set global crypto for Node environments like CI
-if (!globalThis.crypto) {
-  globalThis.crypto = webcrypto;
-}
-
-// Dynamically import and run Vite build
-import('vite').then(vite => vite.build());
+// If running in a Node 20+ environment, --experimental-global-webcrypto ensures this exists already
+await build();
