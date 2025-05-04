@@ -39,8 +39,8 @@ jobs:
         run: npm install
       - name: Fix Permissions
         run: chmod +x node_modules/.bin/vite
-      - name: Build app
-        run: node setup.mjs
+      - name: Build with Vite
+        run: node --experimental-global-webcrypto --import vite --eval "import('vite').then(v => v.build())"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
