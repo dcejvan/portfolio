@@ -40,7 +40,7 @@ jobs:
       - name: Fix Permissions
         run: chmod +x node_modules/.bin/vite
       - name: Build app
-        run: npx vite build
+        run: node setup.mjs
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
