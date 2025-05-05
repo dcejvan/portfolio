@@ -432,15 +432,15 @@ const projectTechText = document.querySelector("#project-tech-text");
 const projectAchText = document.querySelector("#project-ach-text");
 const projectDescText = document.querySelector("#project-description-text");
 
-const jobPicture = ["./images/driftcentral.png", "./images/niwagarden.png", "./images/driftcentral.png"];
-const jobTexts = ["Job 1", "Job 2", "Job 3"];
-const descTexts = ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, perferendis. Dolor consequuntur blanditiis tempora corrupti numquam aperiam excepturi porro cupiditate sed quam ex iste ea, unde vero, similique animi illum?", 
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates at minima harum vel id mollitia, rem ducimus unde maiores dolores, ipsa quae? Animi nihil labore perspiciatis repellendus esse nesciunt perferendis.", 
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt error consectetur expedita pariatur beatae, saepe corporis id aspernatur ipsam aperiam, provident quibusdam! In non qui adipisci deleniti mollitia rerum ab?"];
-const achTexts = ["Achievement 1", "Achievement 2", "Achievement 3"];
-const techTexts = ["Tech 1", "Tech 2", "Tech 3"];
+const jobPicture = ["./images/driftcentral.png", "./images/niwagarden.png", "./images/treasurerush.png"];
+const jobTexts = ["drift central", "niwagarden", "treasure rush"];
+const descTexts = ["Developed and directed a car drifting video game on the platform Roblox with an advanced chassis system that supported 10+ customizable features and 15+ usable vehicles.", 
+    "developed a 3D study technique web game in 36 hours for HackIllinois, featuring 5+ user-retention focused tools and a customizable virtual workspace for users to create their own study environment.", 
+    "designed, developed, and directed a progression-based Roblobx game with scalable digging mechanics, currency systems, gameplay loops, and data persistence."];
+const achTexts = ["80,000 plays • 1,000 likes", "Completed and designed full product in 36 hours", "500,000 plays • 1,000 likes • 6,000 favorites"];
+const techTexts = ["Roblox Studio • Lua • Blender", "JavaScript • Three.js • anime.js • Github", "Roblox Studio • Lua • Blender"];
 const yearTexts = ["(2023-2024)", "(2024)", "(2023)"];
-const projectTitleTexts = ["//drift central", "//niwagarden", "//personal website"];
+const projectTitleTexts = ["//drift central", "//niwagarden", "//treasure rush"];
 
 let currentIndex = 0;
 function handleText(index) {
