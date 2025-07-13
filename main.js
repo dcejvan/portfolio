@@ -1,7 +1,9 @@
 import * as THREE from 'three'
 import { CSS3DObject, CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
 import anime from 'animejs/lib/anime.es.js'
-import { Vector3 } from 'three';
+import driftCentralImg from './images/driftcentral.png';
+import niwaGardenImg from './images/niwagarden.png';
+import treasureRushImg from './images/treasurerush.png';
 
 
 //ADDITIONS DOWN THE LINE
@@ -432,7 +434,7 @@ const projectTechText = document.querySelector("#project-tech-text");
 const projectAchText = document.querySelector("#project-ach-text");
 const projectDescText = document.querySelector("#project-description-text");
 
-const jobPicture = ["./images/driftcentral.png", "./images/niwagarden.png", "./images/treasurerush.png"];
+const jobPicture = [driftCentralImg, niwaGardenImg, treasureRushImg];
 const jobTexts = ["drift central", "niwagarden", "treasure rush"];
 const descTexts = ["Developed and directed a car drifting video game on the platform Roblox with an advanced chassis system that supported 10+ customizable features and 15+ usable vehicles.", 
     "developed a 3D study technique web game in 36 hours for HackIllinois, featuring 5+ user-retention focused tools and a customizable virtual workspace for users to create their own study environment.", 
