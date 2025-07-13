@@ -12,7 +12,77 @@ import resume from './Dennis_Portfolio_Resume.pdf?url'; // Add this line
 //particles or some sort of background so its better
 // ADD CLASS LOAD for specific objects so i can fade them in and out
 
+function createOrientationMessage() {
+    const orientationDiv = document.createElement('div');
+    orientationDiv.id = 'orientation-message';
+    orientationDiv.innerHTML = `
+        <div style="
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins&family=Source+Code+Pro:wght@500&display=swap')
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: Source Code Pro, sans-serif;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        ">
+            <h2>please rotate your device</h2>
+            <p>turn your device horizontally for the best experience :)</p>
+        </div>
+    `;
+    document.body.appendChild(orientationDiv);
+    return orientationDiv;
+}
 
+function checkOrientation() {
+    const isMobile = window.innerWidth <= 768;
+    const isPortrait = window.innerHeight > window.innerWidth;
+    
+    if (isMobile && isPortrait) {
+        let orientationMessage = document.getElementById('orientation-message');
+        if (!orientationMessage) {
+            orientationMessage = createOrientationMessage();
+        }
+        orientationMessage.style.display = 'block';
+        
+
+        document.body.style.overflow = 'hidden';
+        if (renderer && renderer.domElement) {
+            renderer.domElement.style.display = 'none';
+        }
+        if (cssRenderer && cssRenderer.domElement) {
+            cssRenderer.domElement.style.display = 'none';
+        }
+    } else {
+        const orientationMessage = document.getElementById('orientation-message');
+        if (orientationMessage) {
+            orientationMessage.style.display = 'none';
+        }
+        
+        document.body.style.overflow = 'visible';
+        if (renderer && renderer.domElement) {
+            renderer.domElement.style.display = 'block';
+        }
+        if (cssRenderer && cssRenderer.domElement) {
+            cssRenderer.domElement.style.display = 'block';
+        }
+    }
+}
+
+window.addEventListener('load', checkOrientation);
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('orientationchange', () => {
+    setTimeout(checkOrientation, 100); 
+});
 //THREE
 
 //*********************************** */
