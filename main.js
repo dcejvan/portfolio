@@ -4,7 +4,7 @@ import anime from 'animejs/lib/anime.es.js'
 import driftCentralImg from './images/driftcentral.png';
 import niwaGardenImg from './images/niwagarden.png';
 import treasureRushImg from './images/treasurerush.png';
-import resume from './Dennis_Portfolio_Resume.pdf?url'; // Add this line
+
 
 
 //ADDITIONS DOWN THE LINE
@@ -361,14 +361,6 @@ document.getElementById('nav-contact').addEventListener('click', () => {
     moveToFour(); // Move camera to CONTACT section
 });
 
-//resume
-document.addEventListener('DOMContentLoaded', () => {
-    const resumeLink = document.querySelector('a[href="./Dennis_Portfolio_Resume.pdf"]');
-    if (resumeLink) {
-        resumeLink.href = resume; // Update the href to use the imported resume
-        console.log("Resume link updated successfully.");
-    }
-});
 
 //show-skill
 
